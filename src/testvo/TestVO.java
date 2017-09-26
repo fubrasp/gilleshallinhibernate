@@ -5,10 +5,12 @@
  */
 package testvo;
 
+import java.sql.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import metier.Abonne;
+import metier.EnumGenre;
 
 /**
  *
@@ -26,7 +28,7 @@ public class TestVO {
         
         em.getTransaction().begin();
         
-        unAb = new Abonne("Dupont", "Jean", "Jean.Dupont@ji.fr");
+        unAb = new Abonne("Dupont", "Jean", "Jean.Dupont@ji.fr", "Nancy", new Date(1000000), EnumGenre.homme);
         unAb.setId(1);
         em.persist(unAb);
         em.getTransaction().commit();

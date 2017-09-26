@@ -29,7 +29,11 @@ public class TestVO {
         em.getTransaction().begin();
         
         unAb = new Abonne("Dupont", "Jean", "Jean.Dupont@ji.fr", "Nancy", new Date(1000000), EnumGenre.homme);
-        unAb.setId(1);
+        em.persist(unAb);
+        em.getTransaction().commit();
+        
+        em.getTransaction().begin();
+        unAb = new Abonne("Dupont2", "Jean2", "Jean.Dupont2@ji.fr", "Nancy", new Date(1000000), EnumGenre.homme);
         em.persist(unAb);
         em.getTransaction().commit();
         

@@ -2,14 +2,18 @@ package metier;
 
 import java.io.Serializable;
 import java.sql.Date;
+import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.AUTO;
 import javax.persistence.Id;
 
 @Entity
 public class Abonne implements Serializable {
         @Id
+        @GeneratedValue(strategy = AUTO)
         private int ID;
 	private String nom;
 	private String prenom;
